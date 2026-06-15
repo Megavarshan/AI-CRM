@@ -1,4 +1,4 @@
-# 🚀 Orbit — AI-Native CRM for Modern Brands
+# 🚀 AI-Native CRM for Modern Brands
 
 > Transform customer data into intelligent actions with AI-powered customer insights, segmentation, engagement, and automation.
 
@@ -122,25 +122,32 @@ npm run dev
 ```
 
 ---
+---
 
-## 🎯 Why Orbit?
+## 🚀 Future Roadmap
 
-Traditional CRMs store customer data.
-
-**Orbit understands it.**
-
-By combining customer intelligence, AI-driven insights, automation, and semantic search, Orbit helps businesses move from reactive customer management to proactive customer growth.
+* Predictive churn forecasting
+* AI-powered sales assistant
+* Customer journey visualization
+* Marketing automation workflows
+* Multi-channel campaign orchestration
+* Advanced recommendation systems
 
 ---
 
-## 👨‍💻 Team
+## 👨‍💻 Author
 
 ### Megavarshan A
 
-AI Research Engineer
+**AI Research Engineer**
 
-### Shikhar Patel
+* GitHub: https://github.com/Megavarshan
+* LinkedIn: https://www.linkedin.com/in/megavarshan/
 
 ---
 
-⭐ If you found Orbit interesting, consider starring the repository.
+## ⭐ Acknowledgements
+
+This AI CRM  represents an AI-first approach to modern customer relationship management, combining customer intelligence, automation, and data-driven decision-making into a unified platform.
+
+If you found this project interesting, consider giving it a ⭐ on GitHub.
