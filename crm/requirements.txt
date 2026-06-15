@@ -1,0 +1,46 @@
+# CRM Service — Python dependencies
+
+# Web framework
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# Async HTTP (for calling channel service)
+httpx==0.27.0
+
+# Celery + Redis
+celery==5.4.0
+redis==5.0.4
+
+# Database — Supabase
+supabase==2.4.2
+
+# AI — Groq SDK
+groq==0.9.0
+
+# Data processing
+pandas==2.2.2
+numpy==1.26.4
+
+# Seed data generation
+faker==25.2.0
+
+# PDF report generation (charts + layout, pure-python)
+reportlab==4.2.0
+
+# Local ONNX text embeddings for the RAG / pgvector layer (no external API)
+fastembed==0.8.0
+
+# Validation & settings
+pydantic==2.7.1
+pydantic-settings==2.2.1
+python-multipart==0.0.9
+
+# Date/time
+python-dateutil==2.9.0
+
+# Dev / test
+pytest==8.2.0
+pytest-asyncio==0.23.7
+httpx==0.27.0       # also used for TestClient
+ruff==0.4.4
+mypy==1.10.0

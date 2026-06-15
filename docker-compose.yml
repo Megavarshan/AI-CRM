@@ -1,0 +1,102 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  crm:
+    build:
+      context: ./crm
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./crm/.env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - CHANNEL_SERVICE_URL=http://channel:8001
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./crm:/home/orbituser/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  crm-worker:
+    build:
+      context: ./crm
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./crm/.env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - CHANNEL_SERVICE_URL=http://channel:8001
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./crm:/home/orbituser/app
+    command: celery -A celery_app worker --loglevel=info --queues=crm --concurrency=4
+
+  crm-beat:
+    build:
+      context: ./crm
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./crm/.env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - CHANNEL_SERVICE_URL=http://channel:8001
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./crm:/home/orbituser/app
+    command: celery -A celery_app beat --loglevel=info
+
+  channel:
+    build:
+      context: ./channel
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./channel/.env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - CRM_RECEIPT_URL=http://crm:8000/api/v1/receipts
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./channel:/home/orbituser/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+
+  channel-worker:
+    build:
+      context: ./channel
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./channel/.env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - CRM_RECEIPT_URL=http://crm:8000/api/v1/receipts
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./channel:/home/orbituser/app
+    command: celery -A celery_app worker --loglevel=info --queues=channel --concurrency=4

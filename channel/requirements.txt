@@ -1,0 +1,24 @@
+# Channel Service — Python dependencies
+
+# Web framework
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# Async HTTP (receipt callbacks to CRM + Twilio REST API)
+httpx==0.27.0
+# Email (SMTP) uses the Python stdlib (smtplib/email) — no extra dependency.
+# Twilio SMS/WhatsApp is called via its REST API using httpx (no SDK needed).
+
+# Celery + Redis
+celery==5.4.0
+redis==5.0.4
+
+# Validation & settings
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# Dev / test
+pytest==8.2.0
+pytest-asyncio==0.23.7
+ruff==0.4.4
+mypy==1.10.0

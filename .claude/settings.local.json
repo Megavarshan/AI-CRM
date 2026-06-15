@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker --version)",
+      "Bash(py --version)",
+      "Bash(npm --version)",
+      "Bash(curl -s --max-time 45 -N -X POST \"http://localhost:8000/api/v1/copilot/chat\" -H \"Content-Type: application/json\" -d '{\"messages\":[{\"role\":\"user\",\"content\":\"What customer segments do I currently have? Just list them, do not create anything.\"}],\"session_id\":\"test1\"}')",
+      "Bash(./.redis/redis-cli.exe -p 6379 ping)",
+      "Bash(echo \"Redis:    $\\(./.redis/redis-cli.exe -p 6379 ping 2>/dev/null\\)\")",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(echo \"CRM API:  $\\(curl -s http://localhost:8000/health\\)\")",
+      "Bash(curl -s http://localhost:8001/health)",
+      "PowerShell(powershell -ExecutionPolicy Bypass -File D:\\\\CRM\\\\stop.ps1)",
+      "PowerShell(& D:\\\\CRM\\\\stop.ps1)",
+      "Bash(./redis-server.exe --port 6379 --save \"\" --appendonly no)",
+      "Bash(./venv/Scripts/python.exe -m uvicorn main:app --host 0.0.0.0 --port 8000)",
+      "Bash(curl -s -X POST http://localhost:8000/api/v1/imports/analyze -F \"file=@test_messy_customers.csv\")",
+      "Bash(python -c ' *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -X POST http://localhost:8000/api/v1/imports/analyze -F \"file=@test_messy_customers.csv\" -o /tmp/analysis.json)",
+      "Bash(curl -s -X POST http://localhost:8000/api/v1/imports/run -F file=@test_messy_customers.csv -F analysis=__TRACKED_VAR__)",
+      "Bash(curl -s 'https://tgduslrjpbdcdzcsymzl.supabase.co/rest/v1/customers?select=external_id,first_name,last_name,phone,email,city,channel_pref&external_id=like.AC-*' -H 'apikey: __TRACKED_VAR__' -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(python -m json.tool)",
+      "Bash(./venv/Scripts/python.exe -m celery -A celery_app worker -Q channel -P threads -c 8 --loglevel=info)",
+      "Bash(./venv/Scripts/python.exe -m celery -A celery_app worker -Q crm -P threads -c 8 --loglevel=info)",
+      "Bash(curl -s '__TRACKED_VAR__/organizations?select=industry&limit=1' -H 'apikey: __TRACKED_VAR__' -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(curl -s '__TRACKED_VAR__/organizations?select=*&limit=1' -H 'apikey: __TRACKED_VAR__' -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(PYTHONIOENCODING=utf-8 ./venv/Scripts/python.exe db/backfill_demo_org.py)",
+      "Bash(PYTHONIOENCODING=utf-8 ./venv/Scripts/python.exe -c \"from tasks.score_customers import batch_score_all_customers; batch_score_all_customers\\(\\)\")",
+      "Bash(curl -s 'https://tgduslrjpbdcdzcsymzl.supabase.co/rest/v1/customer_scores?select=customer_id,org_id&limit=2' -H 'apikey: __TRACKED_VAR__' -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(curl -s 'http://localhost:8000/api/v1/campaigns?status=completed&limit=1' -H 'X-Org-Id: __TRACKED_VAR__')",
+      "Bash(python -c \"import sys,json;d=json.load\\(sys.stdin\\);print\\('has_feedback:',d.get\\('has_feedback'\\),'| count:',d.get\\('feedback_count'\\),'| discount_sensitivity:',d.get\\('discount_sensitivity'\\)\\)\")",
+      "Bash(curl -s --max-time 60 http://localhost:8000/api/v1/strategist/analysis -H 'X-Org-Id: __TRACKED_VAR__')",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(./venv/Scripts/python.exe -m pip install -q fastembed)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(./venv/Scripts/python.exe -c ' *)",
+      "Bash(./venv/Scripts/python.exe -c \"import fastembed; print\\(fastembed.__version__\\)\")",
+      "Bash(./venv/Scripts/python.exe -c \"from services.embeddings import customer_document, embed_query, to_pgvector; doc=customer_document\\({'first_name':'Priya','city':'Mumbai','channel_pref':'whatsapp'},{'top_category':'skincare','churn_risk':'high','frequency':7,'monetary':8400,'recency_days':70,'last_product':'Rose Serum'}\\); print\\('DOC:',doc\\); v=embed_query\\('lapsed skincare lovers'\\); print\\('query dim:',len\\(v\\),'| pgvec head:',to_pgvector\\(v\\)[:40]\\)\")"
+    ]
+  }
+}

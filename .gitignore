@@ -1,0 +1,76 @@
+# ============================================================
+# Orbit — AI-Native Mini CRM
+# .gitignore
+# ============================================================
+
+# ----- Python -----------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+env/
+venv/
+.venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.nox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.log
+celerybeat-schedule
+celerybeat.pid
+
+# ----- Node / Next.js ----------------------------------------
+node_modules/
+.next/
+out/
+.turbo/
+.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm
+.yarn/
+
+# ----- Environment & Secrets ---------------------------------
+.env
+.env.*
+!.env.example
+!.env.local.example
+*.pem
+*.key
+
+# ----- OS ----------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----- IDEs --------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----- Docker ------------------------------------------------
+# (keep docker-compose.yml, ignore local override)
+docker-compose.override.yml
+
+# ----- Misc --------------------------------------------------
+*.sqlite3
+*.db
+*.zip
