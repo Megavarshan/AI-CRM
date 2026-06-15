@@ -1,238 +1,146 @@
-# 🚀 Orbit — AI-Native CRM for Modern D2C Brands
+# 🚀 Orbit — AI-Native CRM for Modern Brands
 
-Orbit is an AI-powered Customer Relationship Management (CRM) platform designed to help modern D2C and retail brands understand, engage, and retain customers through intelligent automation, predictive analytics, and personalized interactions.
+> Transform customer data into intelligent actions with AI-powered customer insights, segmentation, engagement, and automation.
 
-By integrating customer intelligence, segmentation, AI-driven insights, and omnichannel engagement into a unified platform, Orbit enables businesses to transform customer data into actionable business outcomes.
+Orbit is a next-generation CRM built for modern D2C and retail businesses. Instead of acting as a traditional customer database, Orbit leverages AI to understand customer behavior, generate actionable insights, identify opportunities, and help teams build stronger customer relationships at scale.
 
 ---
 
-## ✨ Features
+## ✨ Key Highlights
 
-### 🤖 AI-Powered Customer Intelligence
+### 🤖 AI Customer Intelligence
 
-* Automated customer profiling
-* Behavioral analytics and engagement tracking
-* AI-generated customer insights
-* Customer lifetime value estimation
+* AI-generated customer summaries
+* Smart behavioral analysis
+* Customer health scoring
+* Actionable engagement insights
 
-### 🎯 Smart Customer Segmentation
+### 🎯 Intelligent Segmentation
 
-* Dynamic audience segmentation
-* Demographic and behavioral grouping
+* Dynamic customer cohorts
 * High-value customer identification
-* Churn-risk customer detection
+* Churn-risk detection
+* Personalized audience targeting
 
-### 📊 Analytics Dashboard
+### 📊 Unified CRM Dashboard
 
-* Customer acquisition metrics
-* Revenue and conversion tracking
-* Retention and engagement analytics
-* Campaign performance monitoring
+* Customer analytics
+* Revenue and growth metrics
+* Engagement tracking
+* Business performance monitoring
 
 ### 💬 Omnichannel Engagement
 
-* Unified customer communication tracking
-* Personalized customer interactions
-* Email workflow integration
-* Customer engagement monitoring
+* Customer interaction tracking
+* Personalized communication workflows
+* Centralized engagement management
 
-### ⚡ AI Workflow Automation
+### ⚡ AI Automation
 
 * Automated customer categorization
-* Insight-driven recommendations
-* Reduced manual CRM operations
-* Intelligent marketing assistance
+* AI-powered recommendations
+* Insight-driven decision support
+* Reduced manual CRM effort
 
-### 🔍 Customer Discovery
+### 🔍 Semantic Customer Search
 
-* Advanced customer search
-* Segmentation-based filtering
-* Quick profile access
-* Customer data exploration
+* Natural language customer queries
+* Intelligent customer discovery
+* Context-aware search experience
 
 ---
 
 ## 🏗️ Architecture
 
 ```text
-                 Customer Data Sources
-                           │
-                           ▼
-              ┌────────────────────────┐
-              │   Data Processing Hub  │
-              └────────────────────────┘
-                           │
-                           ▼
-              ┌────────────────────────┐
-              │   AI Intelligence      │
-              │   & Analytics Layer    │
-              └────────────────────────┘
-                           │
-                           ▼
-              ┌────────────────────────┐
-              │     Orbit CRM UI       │
-              └────────────────────────┘
-                           │
-                           ▼
-           Marketing • Sales • Customer Success
+Customer Data Sources
+          │
+          ▼
+ ┌─────────────────┐
+ │ Data Processing │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ AI Intelligence │
+ │   Layer         │
+ └─────────────────┘
+          │
+          ▼
+ ┌─────────────────┐
+ │ CRM Dashboard   │
+ └─────────────────┘
+          │
+          ▼
+ Marketing • Sales • Customer Success
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
+**Frontend**
 
 * Next.js
 * React
 * TypeScript
 * Tailwind CSS
 
-### Backend
+**Backend**
 
 * Python
 * FastAPI
 
-### AI & Machine Learning
+**AI Layer**
 
-* Large Language Models (LLMs)
-* Retrieval-Augmented Generation (RAG)
+* LLMs
 * Semantic Search
 * Vector Embeddings
+* Retrieval-Augmented Generation (RAG)
 
-### Database & Storage
-
-* Vector Database
-* Structured Data Storage
-
-### Deployment
+**Infrastructure**
 
 * Docker
 * Vercel
 
 ---
 
-## 📂 Project Structure
-
-```bash
-AI-CRM/
-│
-├── app/
-├── components/
-├── channel/
-├── lib/
-├── public/
-├── backend/
-├── data/
-├── scripts/
-├── docs/
-├── .env.example
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
-```
-
----
-
-## ⚙️ Installation
-
-### Clone the Repository
+## 🚀 Getting Started
 
 ```bash
 git clone https://github.com/Megavarshan/AI-CRM.git
 cd AI-CRM
-```
 
-### Install Backend Dependencies
-
-```bash
+# Backend
 pip install -r requirements.txt
-```
 
-### Install Frontend Dependencies
-
-```bash
+# Frontend
 npm install
-```
 
-### Configure Environment Variables
-
-```bash
-cp .env.example .env
-```
-
-Update the environment variables with your API keys and configuration values.
-
----
-
-## ▶️ Running the Application
-
-### Start Backend
-
-```bash
-python main.py
-```
-
-### Start Frontend
-
-```bash
+# Start Development Server
 npm run dev
 ```
 
-The application will be available at:
+---
 
-```text
-http://localhost:3000
-```
+## 🎯 Why Orbit?
+
+Traditional CRMs store customer data.
+
+**Orbit understands it.**
+
+By combining customer intelligence, AI-driven insights, automation, and semantic search, Orbit helps businesses move from reactive customer management to proactive customer growth.
 
 ---
 
-## 📈 Business Impact
-
-Orbit helps organizations:
-
-* Improve customer retention
-* Increase engagement and conversions
-* Identify high-value customers
-* Detect churn risks proactively
-* Automate repetitive CRM tasks
-* Enable data-driven marketing decisions
-
----
-
-## 🔒 Security
-
-* Environment-based configuration management
-* Secure API key handling
-* Protected customer information workflows
-* Scalable architecture for enterprise adoption
-
----
-
-## 🚀 Future Roadmap
-
-* Predictive churn forecasting
-* AI-powered sales assistant
-* Customer journey visualization
-* Marketing automation workflows
-* Multi-channel campaign orchestration
-* Advanced recommendation systems
-
----
-
-## 👨‍💻 Author
+## 👨‍💻 Team
 
 ### Megavarshan A
 
-**AI Research Engineer**
+AI Research Engineer
 
-* GitHub: https://github.com/Megavarshan
-* LinkedIn: https://www.linkedin.com/in/megavarshan/
+### Shikhar Patel
 
 ---
 
-## ⭐ Acknowledgements
-
-Orbit represents an AI-first approach to modern customer relationship management, combining customer intelligence, automation, and data-driven decision-making into a unified platform.
-
-If you found this project interesting, consider giving it a ⭐ on GitHub.
+⭐ If you found Orbit interesting, consider starring the repository.
